@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.tensorflow.lite)
     implementation(libs.tensorflow.lite.support)
+//    implementation("com.esotericsoftware.kryo:kryo:5.4.0")
+    implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

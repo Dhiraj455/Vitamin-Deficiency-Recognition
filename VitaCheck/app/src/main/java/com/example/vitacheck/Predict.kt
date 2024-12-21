@@ -1,6 +1,7 @@
 package com.example.vitacheck
 
 import android.content.Context
+import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,8 +15,8 @@ import androidx.compose.ui.Modifier
 import java.nio.ByteBuffer
 
 @Composable
-fun PredictionScreen(context: Context, image: ByteBuffer) {
-    val prediction = remember { mutableStateOf<Pair<String, Float>?>(null) }
+fun PredictionScreen(context: Context, image: Uri) {
+    val prediction = remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(Unit) {
         prediction.value = predict(context, image)
@@ -27,8 +28,8 @@ fun PredictionScreen(context: Context, image: ByteBuffer) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         prediction.value?.let {
-            Text(text = "Prediction: ${it.first}")
-            Text(text = "Confidence: ${"%.2f".format(it.second * 100)}%")
+            Text(text = "Prediction: ${prediction.value}")
+//            Text(text = "Confidence: ${"%.2f".format(it.second * 100)}%")
         } ?: Text(text = "Loading...")
     }
 }

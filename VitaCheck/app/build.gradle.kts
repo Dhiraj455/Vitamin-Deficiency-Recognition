@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.vitacheck"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.vitacheck"
@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.tensorflow.lite)
     implementation(libs.tensorflow.lite.support)
 //    implementation("com.esotericsoftware.kryo:kryo:5.4.0")
+    implementation(libs.coil)
     implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
